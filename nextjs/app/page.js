@@ -1,13 +1,29 @@
+import React from "react";
 import Link from "next/link";
+import { Inter, Roboto } from 'next/font/google'
+import { cookies } from 'next/headers'
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
+const roboto = Roboto({
+  weight: '900',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function Page() {
+  const newCookies = cookies();
+  console.log(newCookies.get("c1"));
   return (
     <>
       <div >
         Page
       </div>
-      <Link href="/about">Yönlendirme1</Link>
-      <Link href="/about?name=numan">Yönlendirme2</Link>
+      <Link className={inter.className} href="/about">Yönlendirme1</Link>
+      <Link className={roboto.className} href="/about?name=numan">Yönlendirme2</Link>
       <Link href={{
       pathname:"/about",
       query : {
