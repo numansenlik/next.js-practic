@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Inter, Roboto } from 'next/font/google'
 import { cookies } from 'next/headers'
+import Trial from "./trial";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,6 +32,7 @@ export default function Page() {
       surname: "senlik"
       }
       }}>Yönlendirme3</Link>
+      <Trial/>
     </>
   )
 }
