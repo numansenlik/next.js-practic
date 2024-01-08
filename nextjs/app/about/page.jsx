@@ -1,7 +1,14 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname, useSearchParams } from "next/navigation"
 
 function Page() {
+
+    const searchParams = useSearchParams();
+    console.log(searchParams.get('surname'));
+    const pathname = usePathname();
+    console.log(pathname);
     return (
         <div>About
             <Link href={"/"}> AnaSayfa</Link>

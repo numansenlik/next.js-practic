@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Inter, Roboto } from 'next/font/google'
 import { cookies } from 'next/headers'
 import Trial from "./trial";
+import { redirect } from "next/navigation";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,6 +19,10 @@ const roboto = Roboto({
 export default function Page() {
   const newCookies = cookies();
   console.log(newCookies.get("c1"));
+  const nav1 = false;
+  if (nav1) {
+    redirect('/about')
+  }
   return (
     <>
       <div >
